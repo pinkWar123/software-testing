@@ -1,0 +1,10 @@
+# Claude AI files
+/.claude/
+CLAUDE.md
+
+# JetBrains IDE
+/.idea/
+*.iml
+
+# AI Templates
+/AI Templates/
