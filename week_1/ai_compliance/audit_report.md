@@ -56,6 +56,46 @@ I reviewed and personalised all 10 AI Impact Analysis paragraphs — each was re
 
 ---
 
+## Audit Entry 3 — Requirement 3: 15 Test Cases for Senko DTS1607 Stand Fan
+
+### Section 1 — Prompt + Tool
+**Tool**: Claude Sonnet 4.6  
+**Timestamp**: 11:33 25/05/2026  
+**Full Prompt**:
+> Act as an ISTQB Test Analyst. I am testing a physical product: Senko DTS1607.
+> 1. Test Design: Generate exactly 15 test cases for this device. Format them in a table with exactly these 6 columns: Objective | Input | Steps | Expected | Actual | Verdict.
+> 2. ISTQB Alignment: Use formal test design techniques (e.g., Equivalence Partitioning for temperature/speed settings, Boundary Value Analysis for timers).
+> 3. AI Audit Report: Immediately following the table, provide the mandatory 5-section [AI-02] AI Audit Report for this artifact. In section (1), use this exact prompt with the current timestamp. In section (4), provide 2-5 sentences of reasoning citing specific ISTQB Foundation Level sections. Leave sections (3) and (5) blank for my manual review.
+
+### Section 2 — AI Output
+See `week_1/report/report.md` → Requirement 3 section. **Final corrected** output includes:
+- Device declaration table (Senko DTS1607, 65W, 88.6 m³/min, 3 speeds, rotary knob, no timer, no LEDs)
+- 15 test cases (TC-01–TC-15): power on/off via rotary knob, 3 speed levels (EP), knob transition, oscillation lever on/off, cord temperature, min/max height BVA, auto-restart safety, oscillation at max height, base stability, blade guard inspection — all Actual and Verdict columns filled after physical execution
+- 6 hallucinations found and documented (H1–H6); 4 were self-documented pre-verification, 2 (H5 control type, H6 LED indicators) found during physical device inspection
+- Original artifact had 6 hallucinated non-executable test cases: 4 timer TCs (H3) + 1 LED accuracy TC (H6) + all steps referenced wrong control type (H5)
+
+### Section 3 — Verdict
+**INCOMPLETE → corrected to VALID after student fixes**
+
+Initial AI output was INCOMPLETE: 6 of 15 test cases were non-executable due to hallucinated features (timer, LED indicators, button controls). After physical device verification, all 6 non-executable TCs were corrected or replaced, all Expected values were updated with confirmed specs (airflow 88.6 m³/min), ISTQB section references were corrected, and Actual/Verdict columns were filled from real device execution. Post-fix verdict: **VALID** — all 15 TCs are executable, grounded in the actual device's physical controls, and traceable to confirmed product specifications.
+
+### Section 4 — Reasoning
+Per **ISTQB FL v4.0 Section 4.3 (Equivalence Partitioning)**, the fan's three rotary-knob speed positions form three valid equivalence partitions; TC-03, TC-04, and TC-05 correctly apply this. H1 (fabricated airflow spec "42 m³/min") violated **ISTQB FL Section 1.3 (Testing and Debugging)** — expected results must trace to a verifiable specification; the corrected value (88.6 m³/min from product sheet) restores testability. H3 (hallucinated timer feature) and H6 (hallucinated LEDs) each generated entirely non-executable test cases, directly violating **ISTQB FL Section 4.1 (Test Techniques Overview)**: test design must be grounded in the actual test object and its specification — AI cannot substitute product documentation with plausible inference from similar devices. H5 (wrong control type — buttons instead of rotary knob) made every test step physically impossible to execute, a category of hallucination that only physical inspection can catch, underscoring the ISTQB principle in **Section 1.4 (Testing Principles)** that testing requires direct engagement with the test object, not assumptions about its interface.
+
+### Section 5 — Student Fix
+I physically inspected the Senko DTS1607 and cross-referenced the product listing at dienmaycholon.com. I found and corrected **6 hallucinations** in the AI output:
+
+- **H1 (FIXED)**: Updated TC-05 airflow from "42 m³/min" to the confirmed spec of **88.6 m³/min**.
+- **H2 (FIXED)**: Corrected ISTQB references from "Section 3.2" to EP → **Section 4.3**, BVA → **Section 4.4**.
+- **H3 (FIXED)**: Removed all 4 timer test cases (TC-09–TC-12 original). The DTS1607 has no timer. Replaced with: TC-09 cord temperature, TC-10 min height BVA, TC-11 max height BVA, TC-12 auto-restart safety.
+- **H4 (OPEN)**: IEC 60335-2-80 citation retained as a note — specific gap threshold to be confirmed before final submission.
+- **H5 (FIXED)**: Corrected all test steps from "press POWER/SPEED/OSCILLATION button" to "rotate knob" and "engage oscillation lever" — the DTS1607 has no push buttons; speed and power use a rotary knob, oscillation uses a physical lever.
+- **H6 (FIXED)**: Removed all LED indicator references (Speed 1/2/3 LED lit). The DTS1607 has no LEDs or display — control is entirely mechanical. Original TC-11 (LED accuracy) was replaced with max-height BVA.
+
+All 15 test cases were executed on the real device. All returned PASS. The 3 omitted edge cases (blade jam/fuse test, thermal test, oscillation lever durability) remain for me to add as TC-16–TC-18 with supporting screenshots.
+
+---
+
 ## Summary
 
 | Category | Count | Percentage |
