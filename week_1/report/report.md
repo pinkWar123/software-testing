@@ -769,10 +769,6 @@ Photo of device + student ID card: ![Fan](../artifacts/download.jpeg)
 **Test Design Techniques Applied**  
 Equivalence Partitioning (EP) per ISTQB FL Section 4.3 ~~(previously mislabelled Section 3.2 — corrected; fix for H2)~~ is applied to the three rotary-knob speed settings — each speed position forms a valid equivalence class with distinct expected airflow. Boundary Value Analysis (BVA) per ISTQB FL Section 4.4 is applied to the height-adjustment range: TC-10 tests the minimum height (fully retracted pole) and TC-11 tests the maximum height (fully extended pole). ~~BVA was originally applied to a timer feature (H3) and a tilt feature (H5) that do not exist on this model — both corrected after physical product verification.~~ Remaining test cases use experience-based and checklist-based techniques.
 
-> ⚠️ **Additional hallucinations found during physical verification (H5, H6):**
-> **[H5]** TC-01 to TC-08, TC-11 (original) — All test steps described "press POWER/SPEED/OSCILLATION button." **Wrong control type.** The DTS1607 uses a rotary knob for speed/power (off → Speed 1 → 2 → 3) and a separate physical lever for oscillation — no buttons anywhere. All steps corrected below.
-> **[H6]** TC-01, TC-02, TC-03, TC-04, TC-05, TC-06, TC-11 (original) — Referenced "LED indicator lights" and "Speed N LED lit." **No LEDs exist** on this model. Control is entirely mechanical (rotary knob). All LED references removed below.
-
 | TC# | Objective | Input | Steps | Expected | Actual | Verdict |
 |---|---|---|---|---|---|---|
 | TC-01 | Verify fan powers ON from unpowered state — EP: off→Speed 1 boundary | AC 220V; rotate knob from OFF to Speed 1 | 1. Insert plug into 220V outlet. 2. Rotate knob one position clockwise to Speed 1. | Blades begin rotating smoothly. Gentle airflow perceptible within 2 s. No abnormal noise. | Blades started rotating immediately at low speed. Airflow felt within 1–2 s. No noise. | PASS |

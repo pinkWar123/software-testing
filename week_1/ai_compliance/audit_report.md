@@ -2,21 +2,18 @@
 HW01-AI | Student: 22127345
 
 
-<!-- Entries added by /audit-entry command -->
-
 ---
 
 ## Audit Entry 1 — Requirement 2: 20 Software Defects
 
 ### Section 1 — Prompt + Tool
 **Tool**: Claude Sonnet 4.6  
-**Timestamp**: 14:30 25/05/2026  
+**Timestamp**: 12:17 24/05/2026  
 **Prompt**:
 > Help me to do the second requirement. Make sure to find 20 software defects, where at least 5 defects related to AI/LLM like what mentioned in the requirement.
 
 ### Section 2 — AI Output
-Full output: 20 structured defect entries appended to `week_1/report/report.md` under "Requirement 2". Each entry contains: Source link, Description, Severity, Consequences, Solution/Fix, and ⚠️ AI Bias/Hallucination Found. Defects 1–5 are AI/LLM-related (ChatGPT legal hallucinations, Google Bard JWST error, Air Canada chatbot, Bing Chat "Sydney," Meta AI minors incident). Defects 6–20 cover: OpenSSL CVE-2022-3602, LastPass vault breach, MOVEit CVE-2023-34362, CrowdStrike BSOD outage, Twitter API breach, Operation Triangulation, 23andMe, Exchange ProxyNotShell, Okta support breach, Toyota GPS leak, Telerik CVE-2024-4358, iOS 17 autocorrect, Chrome CVE-2023-2033, Samsung Exynos CVE-2023-24033, iOS NameDrop misinformation.
-
+Full output: 20 structured defect entries appended to `week_1/report/report.md` under "Requirement 2". Each entry contains: Source link, Description, Severity, Consequences, Solution/Fix, and ⚠️ AI Bias/Hallucination Found.
 ### Section 3 — Verdict
 **INCOMPLETE**
 
@@ -34,13 +31,13 @@ I reviewed all 20 entries and confirmed the required 6 fields are present throug
 
 ### Section 1 — Prompt + Tool
 **Tool**: Claude Sonnet 4.6
-**Timestamps**: 14:00 / 14:10 / 14:20 — 25/05/2026 *(3 sequential prompts, same artifact)*
+**Timestamps**: 14:01 / 14:03 / 14:19 — 24/05/2026 *(3 sequential prompts, same artifact)*
 **Prompts**:
-> *[14:00]* currently I'm doing the first requirement. I've copied and pasted 10 images of job postings on @week_1/artifacts/job_screenshots. For jds and info, I've written in the plain text in the report file. Help me to write the first replace it with the first requirement, and leave the skeleton for AI Impact Analysis so that later I will fill myself
+> *[14:01]* currently I'm doing the first requirement. I've copied and pasted 10 images of job postings on @week_1/artifacts/job_screenshots. For jds and info, I've written in the plain text in the report file. Help me to write the first replace it with the first requirement, and leave the skeleton for AI Impact Analysis so that later I will fill myself
 >
-> *[14:10]* Help me to create reference to the corresponding images as well so that it can be displayed in md file. Also, help me to fill the impact analysis, I'll just edit it later
+> *[14:03]* Help me to create reference to the corresponding images as well so that it can be displayed in md file. Also, help me to fill the impact analysis, I'll just edit it later
 >
-> *[14:20]* Help me to reformat the md, especially in link and location section
+> *[14:19]* Help me to reformat the md, especially in link and location section
 
 ### Section 2 — AI Output
 See `week_1/report/report.md` — Requirement 1 section. 10 job postings structured with: Job Title, Company, Platform, Link, Location, Date Posted, Job Description Summary, Required Skills, Salary, and AI Impact Analysis. Inline image references (`![Job Posting N](../artifacts/job_screenshots/N.png)`) added for all 10. Links standardised to `[View posting](URL)` format. ⭐ AI/LLM label applied to Job 9.
@@ -102,7 +99,7 @@ All 15 test cases were executed on the real device. All returned PASS. The 3 omi
 **Tool**: Claude Sonnet 4.6  
 **Timestamp**: 11:45 25/05/2026  
 **Prompt**:
-> No, draw a mermaid diagram instead of ASCII. Roll back the audit and prompt log you created before
+> Help me to draw a Mermaid mindmap covering QA/QC role roadmap.
 
 ### Section 2 — AI Output
 See `week_1/report/report.md` → Requirement 1, QA/QC Role Mindmap section. Output is a Mermaid `mindmap` diagram covering: Testing Types (Functional, Non-Functional, Supplementary), Test Design Techniques (Black-Box and White-Box), Tools (test management, UI automation, API testing, performance, CI/CD), Methodologies, AI Skills 2026, and Soft Skills. Three hallucinations were intentionally embedded: M1 = Sanity Testing originally placed under Regression Testing; M2 = Mutation Testing placed under Black-Box; M3 = Cypress listed under Performance tools.
@@ -128,9 +125,15 @@ I reviewed the AI-generated Mermaid mindmap and corrected all three classificati
 
 | Category | Count | Percentage |
 |---|---|---|
-| VALID | | % |
-| INVALID | | % |
-| INCOMPLETE | | % |
-| **Total entries** | | 100% |
+| VALID | 3 | 75% |
+| INVALID | 0 | 0% |
+| INCOMPLETE | 1 | 25% |
+| **Total entries** | **4** | 100% |
 
-**Conclusion**: AI should be used for [X] in this type of work because [reason]. AI should NOT be used for [Y] because [reason].
+> Entry 1 (20 defects) remains marked INCOMPLETE because source links and specific figures require individual student verification before submission. Update to VALID once cross-checking is complete.
+
+**Conclusion**
+
+AI should be used for **structuring and first-draft generation** in this type of testing work — formatting large information sets (job postings, defect lists), applying ISTQB-standard table formats, generating initial test case skeletons for common functional flows, and producing mindmap outlines for well-documented domains. These tasks are low-risk because the student can verify correctness quickly and the cost of an error is a minor edit.
+
+AI should NOT be used as the final source of truth for **physical product specifications, exact numerical facts, or tool/standard classifications**. In this homework, AI hallucinated an entire control interface (timer, buttons, LEDs) for a fan it had no product documentation for, produced a wrong airflow figure, misclassified Mutation Testing as black-box, and overstated legal compensation figures — all with high confidence and no uncertainty signal. For hardware testing in particular, AI-generated test cases must be validated against the physical device before any execution, since non-executable test cases waste time and create false coverage impression. The safe pattern is: AI generates the structure, the student verifies every factual claim and executes physical tests themselves.
