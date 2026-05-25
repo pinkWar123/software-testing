@@ -54,4 +54,14 @@ Tool(s) declared: [list tools used, e.g., Claude Sonnet 4.6, ChatGPT-4o]
 > 2. ISTQB Alignment: Use formal test design techniques (e.g., Equivalence Partitioning for temperature/speed settings, Boundary Value Analysis for timers).
 > 3. AI Audit Report: Immediately following the table, provide the mandatory 5-section [AI-02] AI Audit Report for this artifact. In section (1), use this exact prompt with the current timestamp. In section (4), provide 2-5 sentences of reasoning citing specific ISTQB Foundation Level sections. Leave sections (3) and (5) blank for my manual review.
 
-**Artifact produced**: `week_1/report/report.md` — Requirement 3 section: device declaration table + 15 test cases (TC-01–TC-15) with EP/BVA technique application, 4 self-documented hallucinations (H1: fabricated airflow spec; H2: wrong ISTQB section ref; H3: unverified timer max; H4: uncertain safety standard). Audit Entry 3 added to `ai_compliance/audit_report.md`. (Defects 1–5 AI/LLM: ChatGPT legal citations, Google Bard JWST, Air Canada chatbot, Bing Chat Sydney, Meta AI minors; Defects 6–20: OpenSSL CVE-2022-3602, LastPass vault breach, MOVEit CVE-2023-34362, CrowdStrike BSOD, Twitter API breach, Operation Triangulation, 23andMe, Exchange ProxyNotShell, Okta support breach, Toyota data leak, Telerik CVE-2024-4358, iOS 17 autocorrect, Chrome CVE-2023-2033, Samsung Exynos CVE-2023-24033, iOS NameDrop misinformation)
+**Artifact produced**: `week_1/report/report.md` — Requirement 3 section: device declaration table + 15 test cases (TC-01–TC-15) with EP/BVA technique application, 4 self-documented hallucinations. Audit Entry 3 added to `ai_compliance/audit_report.md`.
+
+---
+
+## [11:45 25/05/2026] — Claude Sonnet 4.6
+**Purpose**: R1 — Generate QA/QC role mindmap as Mermaid diagram (Challenge Mode: 3 intentional mistakes for student to identify and correct)
+**Prompt**:
+> No, draw a mermaid diagram instead of ASCII. Roll back the audit and prompt log you created before
+
+**Artifact produced**: `week_1/report/report.md` — QA/QC Role Mindmap (Mermaid) under Requirement 1. Covers 7 branches: Testing Types, Test Design Techniques, Tools, Methodologies, AI Skills 2026, Soft Skills. 3 embedded mistakes: M1 = Sanity Testing under Regression; M2 = Mutation Testing under Black-Box; M3 = Cypress under Performance. Student corrections documented inline. Audit Entry 4 added to `ai_compliance/audit_report.md`.
+

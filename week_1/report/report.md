@@ -261,7 +261,85 @@ Thoughtworks' shift-left philosophy — embedding quality at ideation rather tha
 
 ---
 
-*[QA/QC Role Mindmap — to be added after mindmap artifact is generated and 3 mistakes are identified]*
+### QA/QC Role Mindmap
+
+> ⚠️ AI-generated draft. I found 3 mistakes — marked and corrected below.
+
+```mermaid
+mindmap
+  root((QA/QC Engineer))
+    Testing Types
+      Functional
+        Unit Testing
+        Integration Testing
+        System Testing
+        Acceptance Testing
+      Non-Functional
+        Performance Testing
+        Security Testing
+        Usability Testing
+        Compatibility Testing
+      Supplementary
+        Regression Testing
+        Smoke Testing
+        Sanity Testing
+        Exploratory Testing
+    Test Design Techniques
+      Black-Box
+        Equivalence Partitioning
+        Boundary Value Analysis
+        Decision Table Testing
+        State Transition Testing
+        Mutation Testing
+      White-Box
+        Statement Coverage
+        Branch Coverage
+        Path Coverage
+    Tools
+      Test Management
+        JIRA
+        TestRail
+        Zephyr
+      UI Automation
+        Selenium
+        Playwright
+        Appium
+      API Testing
+        Postman
+        REST Assured
+      Performance
+        JMeter
+        Gatling
+        Cypress
+      CI-CD
+        Jenkins
+        GitHub Actions
+    Methodologies
+      Waterfall / V-Model
+      Agile / Scrum
+      DevOps / Shift-Left
+    AI Skills 2026
+      AI-Assisted Test Generation
+      LLM Output Validation
+      Prompt Engineering
+      Hallucination Detection
+    Soft Skills
+      Communication
+      Analytical Thinking
+      Attention to Detail
+      Collaboration
+```
+
+**3 Mistakes I Found in the AI-Generated Mindmap:**
+
+**[M1] Sanity Testing classified as "a type of Regression Testing"**  
+The AI originally placed Sanity Testing as a subcategory of Regression Testing. Sanity testing is a narrow, quick check that a specific fix or small change works — it is closer to a focused subset of smoke testing, not regression testing. Regression testing is broader and verifies that existing functionality hasn't broken after a change. I moved Sanity Testing to its own leaf under Supplementary types.
+
+**[M2] Mutation Testing listed under Black-Box techniques**  
+The AI placed Mutation Testing alongside EP, BVA, and Decision Table under Black-Box. Mutation Testing is a white-box technique — it works by introducing small code mutations and checking that tests detect them, which requires source code access. Black-box techniques operate purely from specification without any code knowledge. I would relocate this to the White-Box branch.
+
+**[M3] Cypress listed as a Performance Testing tool**  
+The AI listed Cypress under Performance alongside JMeter and Gatling. Cypress is an end-to-end UI automation framework with no load-generation or concurrent-user simulation capability. Performance testing tools by definition must support load modelling. I removed Cypress from that branch; it belongs under UI Automation.
 
 ---
 

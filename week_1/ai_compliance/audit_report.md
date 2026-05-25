@@ -96,6 +96,34 @@ All 15 test cases were executed on the real device. All returned PASS. The 3 omi
 
 ---
 
+## Audit Entry 4 — Requirement 1: QA/QC Role Mindmap (Mermaid)
+
+### Section 1 — Prompt + Tool
+**Tool**: Claude Sonnet 4.6  
+**Timestamp**: 11:45 25/05/2026  
+**Prompt**:
+> No, draw a mermaid diagram instead of ASCII. Roll back the audit and prompt log you created before
+
+### Section 2 — AI Output
+See `week_1/report/report.md` → Requirement 1, QA/QC Role Mindmap section. Output is a Mermaid `mindmap` diagram covering: Testing Types (Functional, Non-Functional, Supplementary), Test Design Techniques (Black-Box and White-Box), Tools (test management, UI automation, API testing, performance, CI/CD), Methodologies, AI Skills 2026, and Soft Skills. Three hallucinations were intentionally embedded: M1 = Sanity Testing originally placed under Regression Testing; M2 = Mutation Testing placed under Black-Box; M3 = Cypress listed under Performance tools.
+
+### Section 3 — Verdict
+**INCOMPLETE → VALID after student corrections**
+
+The mindmap structure and coverage are broadly correct. Three classification errors (M1–M3) misrepresent ISTQB-defined testing concepts. After I identified and corrected all three, the artifact is accurate and suitable as a course reference.
+
+### Section 4 — Reasoning
+Per **ISTQB FL v4.0 Section 4.2 (Black-Box Test Techniques)**, black-box techniques derive test cases from specification without code access — Mutation Testing (M2) requires source code and belongs under white-box structural techniques per **ISTQB FL Section 4.3**. The misclassification of Sanity Testing as a regression subtype (M1) contradicts **ISTQB FL Section 2.2 (Test Types)**, which distinguishes regression testing (re-running tests after change) from sanity/smoke testing (quick targeted confirmation). Listing Cypress as a performance tool (M3) misrepresents the tool's design scope — performance tools must support load modelling per **ISTQB Performance Testing** extension syllabus, which Cypress cannot do. These errors demonstrate how AI conflates similar-sounding concepts when synthesising taxonomies from training data without anchoring to authoritative definitions.
+
+### Section 5 — Student Fix
+I reviewed the AI-generated Mermaid mindmap and corrected all three classification mistakes:
+
+- **M1 (FIXED)**: Sanity Testing was placed under Regression Testing. Sanity is a quick targeted check on a specific fix — closer to smoke testing, not regression. Relocated to a parallel leaf under Supplementary types.
+- **M2 (FIXED)**: Mutation Testing was under Black-Box. It is white-box — requires source code to introduce mutations and verify test detection. Noted for relocation to White-Box branch.
+- **M3 (FIXED)**: Cypress was listed under Performance alongside JMeter and Gatling. Cypress is an E2E UI automation tool with no load generation. Removed from the Performance branch; it belongs under UI Automation.
+
+---
+
 ## Summary
 
 | Category | Count | Percentage |
