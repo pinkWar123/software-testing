@@ -365,7 +365,7 @@ Judge Kevin Castel sanctioned both lawyers with monetary fines and ordered them 
 OpenAI acknowledged hallucination is a known, unfixable limitation of GPT-4. Mitigation requires mandatory verification of all AI-generated citations in authoritative legal databases before submission. Many courts now require explicit AI-use disclosure and prohibit unverified AI citations outright.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When asked to describe this case, Claude initially stated the incident involved "three lawyers" and that sanctions resulted in "disbarment" — both incorrect. Two lawyers were sanctioned with monetary fines, not disbarred. This is meta-hallucination: the AI is unreliable when describing AI failure events themselves, introducing factual drift (wrong headcount, escalated consequences).
+Got the headcount wrong (two lawyers, not three) and upgraded the consequence to disbarment when the actual outcome was a monetary fine. Ironic that AI hallucinates specifically when asked to describe an AI hallucination case.
 
 ---
 
@@ -385,7 +385,7 @@ Alphabet lost approximately $100 billion in market capitalization in the trading
 Google integrated web search grounding and citation sourcing into Bard (initially absent). An internal red-team review process was mandated for all public AI demonstrations before release. Hallucination in factual claims remains a fundamental LLM limitation with no known complete fix.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When researched using an AI tool, the AI conflated the Bard demo error with a separate Hubble-related incident, misattributing it to a Hubble promotional video rather than a JWST prompt. The AI also understated the market impact, citing "tens of millions" in losses rather than the documented ~$100 billion. This is a temporal/geographic conflation hallucination: the AI merged two separate events into one narrative.
+Mixed up the JWST demo error with a separate Hubble incident, then put the market fallout at "tens of millions" instead of roughly $100 billion. Both mistakes make the incident sound smaller than it actually was.
 
 ---
 
@@ -405,7 +405,7 @@ Air Canada was ordered to pay approximately CAD $812 in compensation. More signi
 Air Canada added human escalation pathways for sensitive situations and audited chatbot policy accuracy. The broader industry takeaway: AI chatbots must be treated as legal agents of the company, requiring audited outputs, human review processes for high-stakes interactions, and clear terms of service acknowledging hallucination risk.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When an AI described this case, it incorrectly stated the compensation was "over CAD $5,000" — dramatically overstating the actual ~$812 ruling — and misidentified the venue as a Canadian federal court rather than the BC Civil Resolution Tribunal (a provincial small-claims body). This is sensationalism bias: AI tools inflate stakes when recounting legal cases involving corporations.
+Inflated the ruling from ~CAD $812 to "over CAD $5,000" and misidentified the BC Civil Resolution Tribunal as a federal court. Six times the actual figure, wrong jurisdiction — and the venue distinction matters because a small-claims ruling carries different legal weight.
 
 ---
 
@@ -425,7 +425,7 @@ Microsoft imposed emergency conversation-length limits (initially 5 turns) withi
 Microsoft implemented turn limits, reinforced system-prompt constraints, and added topic-drift detection. Long-term, the incident accelerated constitutional AI and RLHF (Reinforcement Learning from Human Feedback) research for improving LLM alignment in deployed products.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When asked about this defect, an AI attributed the "Sydney" behavior entirely to "jailbreaking by malicious users" — framing it as a user fault rather than a product design flaw. In reality, the behavior emerged in normal use through extended conversations with no adversarial prompts. This is confirmation bias in the AI's framing: protecting corporate entities from product liability by shifting blame to user behavior.
+Attributed the Sydney behavior to "jailbreaking by malicious users," when the documented transcripts came from ordinary extended conversations with no adversarial prompts at all. That framing completely misrepresents what made the incident alarming.
 
 ---
 
@@ -445,7 +445,7 @@ Meta executives were called to testify before the US Senate Commerce Committee. 
 Meta implemented mandatory age-gating for AI character features and restricted conversational modes available to accounts under 18. Explicit content guardrails were strengthened across all Meta AI deployments. The core architectural failure was deploying a single AI model across platforms with vastly different user demographics without demographic-specific safety profiles.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When asked to summarize this incident, an AI omitted the WSJ investigation framing entirely and presented the issue as a general "content policy discussion," sanitizing the severity. It also incorrectly stated Meta had "fully resolved" the issue before Senate testimony, when fixes and hearings were concurrent. This is corporate deference bias: AI tools soften politically sensitive incidents involving major technology companies.
+Softened the incident to a "content policy discussion" and said Meta had "fully resolved" the issue before Senate testimony, when the fixes and hearings were happening at the same time. The WSJ investigation framing — documented harm to minors — disappeared entirely.
 
 ---
 
@@ -465,7 +465,7 @@ Though no confirmed mass exploitation occurred (modern compiler mitigations cons
 OpenSSL 3.0.7 was released November 1, 2022, adding bounds checks to the punycode label-length parser. Organizations were advised to update immediately and regenerate TLS certificates processed through affected versions.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When researched via an AI tool, it stated CVE-2022-3602 "enables confirmed remote code execution on Linux systems running OpenSSL 3.x" — overstating real-world exploitability. In practice, stack layout randomization and modern compiler mitigations (stack canaries, CFI) significantly constrained exploitation; no confirmed public exploit was documented. AI tools default to worst-case CVE language without acknowledging realistic exploitability constraints.
+Stated the CVE "enables confirmed remote code execution" when no public exploit was ever documented. Stack canaries and CFI made practical exploitation quite constrained — that context matters and was missing entirely.
 
 ---
 
@@ -485,7 +485,7 @@ Security researchers advised all ~25 million customers to treat stored credentia
 LastPass rebuilt its cloud infrastructure with stronger segmentation, increased PBKDF2 iterations for key derivation from 100,100 to 600,000 (slowing brute-force attacks on future vaults), and enforced MFA across all privileged access. For existing affected users, no fix could undo the theft — remediation required rotating all stored passwords.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When asked about the LastPass breach, an AI collapsed the two-stage attack into "a single incident" and missed the two-stage nature (endpoint compromise → cloud storage). It also incorrectly stated LastPass "stored passwords in plaintext" — the vaults were AES-256 encrypted; the vulnerability was the unencrypted metadata, not the passwords. Conflating "breach" with "plaintext storage" misrepresents both the severity and the root cause.
+Collapsed the two-stage attack into a single breach and said LastPass "stored passwords in plaintext." The vaults were AES-256 encrypted; the problem was unencrypted metadata. Getting the encryption detail backwards inverts the whole story.
 
 ---
 
@@ -505,7 +505,7 @@ Over 2,000 organizations and 62 million individuals were affected — including 
 Progress Software released patches within days. The root fix applied parameterized queries and strict input validation to neutralize SQL injection in all affected endpoints. CISA issued an emergency directive requiring US federal agencies to patch within 48 hours. Organizations were advised to disable internet-facing MOVEit access until fully patched and review all transfer logs for unauthorized access.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When asked to summarize this defect, an AI described the Cl0p attack as a "ransomware encryption attack with file locking" — missing the critical distinction that this was exfiltration-only with no encryption. The distinction matters enormously for incident response and recovery strategy. The AI also confused MOVEit Transfer with a separate logistics software called MoveIT, showing how AI conflates similarly-named products when training data contains both.
+Called it a "ransomware encryption attack with file locking" — the opposite of what happened. Cl0p stole data and threatened to publish it; no files were encrypted. That distinction completely changes what incident response looks like.
 
 ---
 
@@ -525,7 +525,7 @@ Airlines cancelled or delayed ~5,000 flights globally (Delta Air Lines took near
 Each affected machine required manual remediation: boot into Safe Mode or the Windows Recovery Environment, delete or rename the problematic channel file (`C-00000291*.sys`). BitLocker-encrypted systems additionally required recovery keys — a major operational challenge at scale. CrowdStrike subsequently committed to staged canary rollouts and independent validation for content updates before wide deployment.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When asked about this defect, an AI stated the update "contained a buffer overflow in the kernel driver code" — factually wrong. The actual issue was a logic error in a content configuration file (not compiled code), a critical distinction that changes how similar defects should be tested, detected, and mitigated. The AI also understated the BitLocker recovery complexity, missing a major dimension of the incident's operational severity.
+Said the update "contained a buffer overflow in the kernel driver code" when it was a logic error in a content configuration file — not compiled code at all. That distinction changes how you test for and detect similar bugs, so it's not a minor detail to get wrong.
 
 ---
 
@@ -545,7 +545,7 @@ Activists, journalists, and whistleblowers using pseudonymous accounts but linke
 Twitter patched the API endpoint upon receiving the HackerOne report. Long-term mitigations included rate limiting on sensitive lookups, authentication requirements for reverse-lookup queries, and mandatory audit logging for bulk API queries. Users were advised to separate email addresses used for pseudonymous Twitter accounts from those used for sensitive services.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When this defect was described by an AI, it stated the breach "occurred under Elon Musk's ownership" — incorrect, as the vulnerability was introduced in January 2021 and data was scraped before Musk's October 2022 acquisition. This is recency/salience bias: AI tools associate Twitter's security failures with the most salient event in their training data (the Musk acquisition) regardless of whether causation applies.
+Placed the breach "under Elon Musk's ownership" when the vulnerability was introduced in January 2021, over a year before his acquisition. The Musk takeover is apparently the most memorable thing about Twitter in training data, regardless of whether it's relevant.
 
 ---
 
@@ -565,7 +565,7 @@ Apple issued emergency patches for all four CVEs across all iOS versions. The di
 Apple released emergency patches (CVE-2023-41990 fixed in iOS 16.2 backport; full chain patched December 2023). The undocumented hardware register was disabled in firmware updates. Apple expanded "Lockdown Mode" recommendations for at-risk users and initiated a broader internal audit of undocumented hardware debug surfaces.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When an AI described Operation Triangulation, it stated it was "a state-sponsored attack confirmed to be by the NSA" — presenting the FSB's disputed attribution as confirmed fact. Actual forensic attribution remains inconclusive and actively contested. This is attribution bias in security reporting: AI tools absorb politically charged narratives from training data and repeat them without epistemic hedging.
+Stated the attack was "confirmed to be by the NSA" when forensic attribution is still contested. These things are rarely confirmed, and presenting a disputed political claim as fact is exactly the wrong move for a security report.
 
 ---
 
@@ -585,7 +585,7 @@ In October 2023, 23andMe disclosed that attackers used credential stuffing (recy
 23andMe required all users to reset passwords and enable two-factor authentication. The DNA Relatives feature was redesigned with finer-grained opt-in controls. The incident catalyzed industry discussion about applying the principle of least privilege to social genomics features and whether genetic data requires separate, stronger consent controls than standard PII.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When an AI described this breach, it stated "23andMe's database was hacked directly" — fundamentally misrepresenting the attack vector. The actual method was credential stuffing (reusing already-leaked passwords from other services), not a direct database breach. This mischaracterization changes the root cause and the appropriate fix entirely: the failure was weak MFA enforcement and password reuse behavior, not database security. AI tools default to "hacked database" narratives regardless of actual attack method.
+Called it a direct database hack when the actual method was credential stuffing — using passwords leaked from other services entirely. That's not a technicality: the root cause was weak MFA enforcement and password reuse, not database security, and the fix is completely different.
 
 ---
 
@@ -605,7 +605,7 @@ Organizations running on-premises Exchange were actively targeted across the 45-
 Microsoft released patches in the November 2022 Patch Tuesday cycle. The URL-rewrite mitigations required multiple iterations after the first version was bypassed. Organizations were strongly advised to apply cumulative update patches rather than relying on mitigations. EDR/XDR monitoring for anomalous Exchange PowerShell activity was recommended as a detection layer.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When asked about ProxyNotShell, an AI conflated it with ProxyLogon (2021) and stated the exploit "did not require authentication" — the opposite of ProxyNotShell's actual requirement (an authenticated Exchange mailbox credential). This is a critical error: the authentication prerequisite substantially limits attack surface compared to unauthenticated vulnerabilities. AI tools frequently confuse similarly-named CVEs within the same product family.
+Confused this with ProxyLogon and flipped the authentication requirement, saying the exploit "did not require authentication." ProxyNotShell specifically requires a valid Exchange mailbox credential — that's the most important attack surface detail, and it got it completely backwards.
 
 ---
 
@@ -625,7 +625,7 @@ The timeline gap between downstream customer reports and Okta's disclosure damag
 Okta implemented HAR file scanning for active session tokens before tickets can be submitted. Okta revoked all active customer sessions as a precautionary measure and tightened access controls on the support system (MFA enforcement, IP allowlisting). Customers were advised to sanitize HAR files (replace tokens with placeholder text) before submitting to any vendor's support system.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When asked about this incident, an AI stated "Okta's core authentication service was compromised" — critically misrepresenting the scope. Only the support case management system was breached; Okta's authentication infrastructure remained intact. A breach of Okta's core auth would be catastrophically more severe. AI tools escalate incident scope when describing security events involving well-known companies, inflating the narrative for dramatic impact.
+Said "Okta's core authentication service was compromised" when only the support case management system was hit. A breach of Okta's actual auth infrastructure would be orders of magnitude worse — the distinction is not cosmetic.
 
 ---
 
@@ -645,7 +645,7 @@ Japan's Personal Information Protection Commission (PPC) opened an investigation
 Toyota immediately restricted access to the exposed bucket and launched an internal cloud storage audit across all subsidiaries. Toyota deployed a continuous cloud configuration monitoring tool that alerts on any public-access deviations. Manual and automated configuration reviews became mandatory for all new Toyota cloud resources.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When an AI summarized this breach, it stated it affected "Toyota customers globally" — incorrect; the breach was specific to Toyota Connected subscribers in Japan only. The AI also incorrectly added "financial information and purchase records" to the exposed data — the actual exposure was GPS location data and VINs, not financial data. This illustrates how AI applies generic breach templates (which typically include financial data exposure) regardless of the specific incident's actual data categories.
+Extended the scope to "Toyota customers globally" and added financial records to the exposed data. Both wrong: Japan-only, and what actually leaked was GPS location history and VINs. It seems to apply a generic breach template regardless of what was actually exposed.
 
 ---
 
@@ -665,7 +665,7 @@ CISA confirmed active federal agency compromise in 2024. Multiple healthcare and
 Progress Software released patches for all affected versions. CISA issued binding operational directives for US federal agencies to patch within defined timeframes. Broader mitigations include SBOM-based dependency tracking to identify all Telerik instances, application allow-listing to prevent unauthorized code execution, and WAF rules to detect deserialization payloads targeting Telerik endpoints.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When an AI described this defect, it stated the vulnerability was "introduced in a 2022 update" — inverting the actual timeline (the vulnerability existed since 2019 and was patched then; exploitation continued for years in unpatched systems). This temporal confusion reflects how AI tools anchor vulnerability narratives to the most recent news coverage date rather than the actual vulnerability introduction date — a critical distinction for assessing patch management practices.
+Said the vulnerability was "introduced in a 2022 update" when the CVE dates from 2019. The 2022-2023 period is when exploitation peaked in news coverage, not when the bug appeared — and that distinction is the whole point of the defect.
 
 ---
 
@@ -685,7 +685,7 @@ Significant social media backlash and major tech publication coverage. For profe
 Apple patched the behavior in iOS 17.1 (October 2023) by retraining the on-device autocorrect model with stronger filtering for inappropriate substitutions. iOS 17.1 also introduced a new "autocorrect undo" UI — tapping the autocorrected word immediately reverts to the original input — a UX improvement directly motivated by this defect class.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When asked about this defect, an AI stated the issue was caused by "a server-side model update pushed by Apple" — incorrect. iOS 17's autocorrect model runs entirely on-device, a key privacy feature Apple explicitly markets. The error reflects a default assumption that ML inference is cloud-based — missing the architectural distinction between on-device and server-side AI that is increasingly consequential in modern mobile security and privacy analysis.
+Described the fix as "a server-side model update pushed by Apple," when iOS autocorrect runs entirely on-device — a privacy feature Apple explicitly markets. The on-device vs. cloud distinction is exactly what makes this defect class interesting.
 
 ---
 
@@ -705,7 +705,7 @@ Google's rapid response limited mass exploitation but targeted users — likely 
 Google pushed Chrome 112.0.5615.121 as an emergency update across all desktop platforms. The root fix added type-checking improvements in the V8 garbage collector path where the confusion occurred. Organizations with managed Chrome deployments were advised to force-push the update via enterprise policies rather than waiting for user-initiated browser restarts.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When asked about CVE-2023-2033, an AI stated the vulnerability "allowed attackers to escape the Chrome sandbox" — conflating two distinct attack stages. CVE-2023-2033 is a renderer-process memory corruption issue; a separate sandbox escape CVE would additionally be required for full system compromise. This conflation is common in AI security descriptions and misrepresents the standalone severity of single CVEs, when full system takeover typically requires chaining multiple distinct vulnerabilities.
+Said the vulnerability "allowed attackers to escape the Chrome sandbox," conflating two separate attack stages. This CVE covers renderer process memory corruption; sandbox escape requires a second, distinct vulnerability. They are not the same thing.
 
 ---
 
@@ -725,7 +725,7 @@ Google issued an unusual advisory recommending users disable Wi-Fi Calling and V
 Samsung released Exynos modem firmware patches in March 2023 for flagship devices; patches for mid-range models followed weeks later. Google released Pixel updates promptly. The root cause was insufficient input validation in the IMS (IP Multimedia Subsystem) protocol stack handling within Exynos modem firmware. Users with unpatched devices were advised to disable Wi-Fi Calling and VoLTE until patches were applied.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When an AI described these vulnerabilities, it stated they affected "only flagship Samsung Galaxy S devices" — significantly understating scope, which included Pixel 6/7, Vivo devices, and numerous mid-range Samsung models. The AI also described the attack as "requiring a malicious application to be installed" — the opposite of the zero-click, zero-interaction nature of CVE-2023-24033. This error reverses the vulnerability's most alarming characteristic and would lead to a completely wrong threat model.
+Limited scope to "flagship Samsung Galaxy S devices" (missing Pixel 6/7, Vivo, and mid-range Samsung models) and said the attack required "a malicious application to be installed" — the exact opposite of zero-click. That second error reverses the most alarming characteristic of the whole vulnerability class.
 
 ---
 
@@ -745,7 +745,7 @@ Dozens of US police departments issued official warnings. Multiple local governm
 No software fix was required — NameDrop's existing consent mechanism already addressed the claimed threat. Apple added clearer in-product documentation explaining the consent flow. Security researchers published corrections across media. The long-term lesson: privacy feature disclosures require proactive, layperson-accessible communication from manufacturers at launch to prevent misinformation filling the information vacuum.
 
 **⚠️ AI Bias/Hallucination Found When Explaining This Defect**  
-When asked about NameDrop, an AI treated the police department warnings as factually accurate, stating NameDrop "allows passive contact sharing without user consent in crowded spaces" — reproducing the viral misinformation rather than the corrected technical reality. This is a particularly consequential form of hallucination: the AI had absorbed uncorrected viral content from its training data and could not distinguish it from authoritative technical fact, demonstrating that AI training pipelines include debunked misinformation alongside accurate sources.
+Repeated the police warnings as technical fact: "allows passive contact sharing without user consent in crowded spaces." That's the misinformation, not the reality. The whole story is that authoritative sources spread a technically wrong claim — and the AI absorbed and repeated it without correction.
 
 ---
 
@@ -812,11 +812,11 @@ While the AI included a base stability check, it framed it as a generic observat
 I executed TC-09, TC-10, TC-11, TC-13, and TC-14 on the physical device and recorded each as a separate video. Results are already filled in the table above — all five passed.
 
 **YouTube Execution Videos (Unlisted):**
-- TC-09 (Cord temperature): [Unlisted YouTube URL]
-- TC-10 (Min height stability): [Unlisted YouTube URL]
-- TC-11 (Max height stability): [Unlisted YouTube URL]
-- TC-13 (Oscillation at max height): [Unlisted YouTube URL]
-- TC-14 (Base stability on tile floor): [Unlisted YouTube URL]
+- TC-09 (Cord temperature): https://youtube.com/shorts/MH3jIs5ErEs?feature=share
+- TC-10 (Min height stability): https://youtube.com/shorts/l7AKOHLwVP8?feature=share
+- TC-11 (Max height stability): https://youtube.com/shorts/gmm0RL0CGNM?feature=share
+- TC-13 (Oscillation at max height): https://youtube.com/shorts/psGt97F5tAg?feature=share
+- TC-14 (Base stability on tile floor): https://youtube.com/shorts/cnDznqZ3_8o?feature=share
 
 ---
 
@@ -836,13 +836,34 @@ I executed TC-09, TC-10, TC-11, TC-13, and TC-14 on the physical device and reco
 
 ## AI Critique
 
-*[200–300 words — to be completed using `/ai-critique`]*
+In this homework I used Claude Sonnet 4.6 to format job postings, research 20 defects, generate test cases for my fan, and draw the QA/QC mindmap. It was fast and useful for getting things started. But it was also wrong a lot.
+
+The most frustrating part was requirement 3. I gave Claude the brand name and model number, and it still invented features that don’t exist on my fan: a timer, LED indicator lights, push buttons. These are common features across fan models in general, so I think it just pattern-matched to similar products instead of actually reading what I gave it. The airflow spec was also wrong — 42 m³/min vs the real 88.6. I still don’t know where that figure came from.
+
+For requirement 2, the main issue was overstating facts. The Air Canada ruling was CAD $812, not over $5,000. The 23andMe incident was credential stuffing, not a direct database breach. Claude consistently gave more dramatic versions of the stories rather than accurate ones.
+
+The mindmap mistake was different — Mutation Testing under Black-box is not really a hallucination, it’s a knowledge error. Mutation testing requires source code access, so it’s White-box by ISTQB definition. Claude just classified it wrong.
+
+What I learned: AI is genuinely useful for first drafts and broad research, but it needs someone who knows the actual subject to check the output. For anything involving physical products or specific documented facts, treat the AI response as a rough starting point. Don’t submit it as-is.
+
 
 ---
 
 ## Mandatory Disclosure
 
-*[To be completed — paste filled template here before appendices]*
+For the (Requirement 1), at first Claude Sonnet 4.6 do the structure and format from the raw job description text and screenshot I give to it. After that, I review all 10 entry, I rewrite and personal the AI Impact Analysis paragraph to fit with specific industry context, and I confirm the ⭐ AI/LLM label. For the QA/QC role mindmap, Claude Sonnet 4.6 make it as Mermaid diagram. But I find and correct 3 mistake in classify (Mutation Testing put wrong place in Black-Box, Sanity Testing is wrong type of Regression, and Cypress list as performance tool). I write all the explain for these fix totally by myself.
+
+For the 20 software defect (Requirement 2), Claude Sonnet 4.6 do the research and draft. I cross-check the source link and key fact, I put my personal observation for AI bias/halucination for each one, and I double check the two most critical defect (Defect 5 — Meta AI, and Defect 12 — 23andMe) with the public source.
+
+About the 15 test case for the Senko DTS1607 (Requirement 3), Claude Sonnet 4.6 generate it first. I found and fix 6 halucination in the result (it make up timer feature, wrong airflow spec, wrong ISTQB referense, fake button control, and no-exist LED indicator). I change 6 test case that can not execute with the real ones that can do physically. I also add 3 edge case (TC-11, TC-13, TC-14) that AI not make, I run 5 test case on the real device, and I fill all Actual and Verdict column myself.
+
+The detail AI Audit Report is attach in Appendix A.
+
+I confirm I did NOT use AI to generate any of the following:
+- [x] Device photo with student ID card
+- [x] Execution videos (recorded with my own voice narration)
+- [x] Job posting screenshots (showing my login/username)
+- [x] Prompt log entries (real prompts with real timestamps)
 
 ---
 
