@@ -864,3 +864,17 @@ I confirm I did NOT use AI to generate any of the following:
 ---
 
 *Appendix A: see `appendix_A_prompt_log.md`*
+
+---
+
+## Self-Assessment
+
+| No. | Criteria | Max Grade | Self-Assessed Grade |
+|-----|----------|:---------:|:-------------------:|
+| 1 | Job Market 2026+ (10 jobs × 3 pts + AI Impact) |    35     | |
+| 2 | Software Defects 2022–2026 (20 defects) |    15     | |
+| 3 | Physical-product test design (15 TCs + 5 videos) |    20     | |
+| AI-1 | [AI-02] AI Audit Report (5-section) attached |     8     | |
+| AI-2 | AI Critique 200–300 words + [AI-03] Disclosure attached |     4     | |
+| AI-3 | [AI-05] Checklist signed + anti-cheat artifacts |     3     | |
+| | **Total** |  **85**   | |
