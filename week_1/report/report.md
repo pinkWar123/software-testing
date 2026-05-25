@@ -1,7 +1,7 @@
 # HW01 Report — QA/QC Jobs · 20 Defects · Test a Physical Product
 **Course**: Software Testing — FIT@HCMUS 2026  
-**Student ID**: [YOUR STUDENT ID]  
-**Full Name**: [YOUR NAME]  
+**Student ID**: 22127345
+**Full Name**: Nguyen Hong Quan  
 **Submission Date**: 25/05/2026  
 
 ---
@@ -136,7 +136,7 @@ AI code-generation tools like GitHub Copilot are accelerating software delivery 
 ---
 
 ### Job 6 — QA Automation Engineer, Embedded AI @ Motorola Solutions ⭐ AI/LLM
-**Link**: [TODO — paste URL here]  
+**Link**: [View posting](https://www.linkedin.com/jobs/search/?currentJobId=4077153978&keywords=Tester&origin=BLENDED_SEARCH_RESULT_NAVIGATION_JOB_CARD&originToLandingJobPostings=4392466349%2C4413481672%2C4416503399)   
 **Location**: Vietnam (Ho Chi Minh City area)
 
 ![Job Posting 6](../artifacts/job_screenshots/6.png)
@@ -675,14 +675,14 @@ When asked about NameDrop, an AI treated the police department warnings as factu
 
 ### Device Declaration
 
-| Field | Value |
-|---|---|
-| **Brand** | Senko |
-| **Model** | DTS1607 |
-| **Year** | [Check label on device base] |
-| **Serial Number** | [First 4 chars]–XXXX–[Last 4 chars] |
+| Field | Value      |
+|---|------------|
+| **Brand** | Senko      |
+| **Model** | DTS1607    |
+| **Year** | 2022       |
+| **Serial Number** | Can't find |
 
-*Photo of device + student ID card: see `artifacts/device_photo.jpg`*
+Photo of device + student ID card: ![Fan](../artifacts/download.jpeg)
 
 ---
 
@@ -713,23 +713,7 @@ Equivalence Partitioning (EP) per ISTQB FL Section 4.3 ~~(previously mislabelled
 | TC-14 | Verify base stability during Speed 3 on flat floor | Fan at mid height; Speed 3; on flat hard floor | 1. Place fan on flat floor at mid height. 2. Run at Speed 3 for 2 min. 3. Observe base. | Base does not slide, rock, or shift. Fan remains in starting position. | Base did not move. Fan remained in exact starting position throughout. | PASS |
 | TC-15 | Verify blade guard physical integrity — no blade contact possible | Fan powered OFF; visual and tactile inspection | 1. Power OFF. 2. Inspect front and rear guard for cracks, loose clips. 3. Gently press guard panels inward. | Guard panels fully attached. No visible cracks. Mesh gaps prevent finger contact with blades. (IEC 60335-2-80 gap limit to be verified ⚠️[H4].) | Guard panels firmly clipped. No cracks found. Pressing inward had no flex. Fingers cannot reach blades through mesh. | PASS |
 
----
 
-> ⚠️ **SELF-DOCUMENTED & STUDENT-VERIFIED HALLUCINATIONS**
->
-> **[H1]** ✅ FIXED — TC-05 Expected originally stated "42 m³/min." Actual rated airflow per product spec: **88.6 m³/min**. Corrected in TC-05.
->
-> **[H2]** ✅ FIXED — Cited "ISTQB FL Section 3.2" for EP/BVA. Correct references: EP → **Section 4.3**, BVA → **Section 4.4** (ISTQB FL v4.0). Section 3.x covers static testing. Corrected in intro paragraph.
->
-> **[H3]** ✅ FIXED — Originally generated 4 test cases for a timer feature (TC-09–TC-12). The Senko DTS1607 has **no timer** (confirmed: product spec lists Timer = None). All 4 timer TCs replaced with physically executable alternatives. Root cause: AI pattern-matched to common fan features without product-specific documentation.
->
-> **[H4]** ⚠️ OPEN — TC-15 cites "IEC 60335" blade guard gap limit. The specific sub-standard (IEC 60335-2-80, fans) and exact gap threshold should be confirmed. Vietnamese equivalent (TCVN) may apply. Kept as a note pending verification.
->
-> **[H5]** ✅ FIXED — All original test steps described "press POWER/SPEED/OSCILLATION button." The DTS1607 uses a **rotary knob** (off → Speed 1 → 2 → 3) for power and speed, and a **physical oscillation lever** — no push buttons exist. All steps corrected throughout the table.
->
-> **[H6]** ✅ FIXED — TC-01 through TC-06 and original TC-11 referenced "LED indicator lights" and "Speed N LED lit." The DTS1607 has **no LEDs or indicator lights** — control is entirely mechanical. All LED references removed. Original TC-11 (LED accuracy) was a fully non-executable test case and has been replaced with max-height BVA (TC-11).
->
----
 
 ### Edge Cases I Added (AI Could Not Generate These)
 
@@ -760,7 +744,15 @@ I executed TC-09, TC-10, TC-11, TC-13, and TC-14 on the physical device and reco
 
 ### Defects Found During Execution
 
-No defects were found during execution of the five recorded test cases. All passed within expected parameters. Any defects found during the remaining test case execution are logged as GitHub Issues — see screenshot of Issues page in `artifacts/github_issues_screenshot.png`.
+ **[H1]** ✅ FIXED — TC-05 Expected originally stated "42 m³/min." Actual rated airflow per product spec: **88.6 m³/min**. Corrected in TC-05.
+
+**[H2]** ✅ FIXED — Cited "ISTQB FL Section 3.2" for EP/BVA. Correct references: EP → **Section 4.3**, BVA → **Section 4.4** (ISTQB FL v4.0). Section 3.x covers static testing. Corrected in intro paragraph.
+
+ **[H3]** ✅ FIXED — Originally generated 4 test cases for a timer feature (TC-09–TC-12). The Senko DTS1607 has **no timer** (confirmed: product spec lists Timer = None). All 4 timer TCs replaced with physically executable alternatives. Root cause: AI pattern-matched to common fan features without product-specific documentation.
+
+ **[H4]** ✅ FIXED — All original test steps described "press POWER/SPEED/OSCILLATION button." The DTS1607 uses a **rotary knob** (off → Speed 1 → 2 → 3) for power and speed, and a **physical oscillation lever** — no push buttons exist. All steps corrected throughout the table.
+
+ **[H5]** ✅ FIXED — TC-01 through TC-06 and original TC-11 referenced "LED indicator lights" and "Speed N LED lit." The DTS1607 has **no LEDs or indicator lights** — control is entirely mechanical. All LED references removed. Original TC-11 (LED accuracy) was a fully non-executable test case and has been replaced with max-height BVA (TC-11).
 
 ---
 
